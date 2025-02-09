@@ -2,13 +2,42 @@
 import { ref } from 'vue';
 
 const activeButton = ref('one');
+const activePage = ref('one'); // 用來儲存目前顯示的頁面
 
 const clickOne = () => {
   activeButton.value = 'one';
+  activePage.value = 'one'; // 顯示 page1
 };
 
 const clickThree = () => {
   activeButton.value = 'three';
+  activePage.value = 'three'; // 顯示 page2
+};
+
+// 用來檢測左右滑動
+let touchstartX = 0;
+let touchendX = 0;
+
+const checkSwipe = () => {
+  if (touchendX < touchstartX) {
+    // 向左滑，切換到 page2
+    activePage.value = 'three';
+    activeButton.value ='three';
+  }
+  if (touchendX > touchstartX) {
+    // 向右滑，切換到 page1
+    activePage.value = 'one';
+    activeButton.value ='one';
+  }
+};
+
+const touchStart = (e) => {
+  touchstartX = e.changedTouches[0].screenX;
+};
+
+const touchEnd = (e) => {
+  touchendX = e.changedTouches[0].screenX;
+  checkSwipe();
 };
 </script>
 
@@ -38,7 +67,13 @@ const clickThree = () => {
     </div>
   </div>
 
-  <div v-if="activeButton === 'one'" class="container-fluid  page1 mt-2 ">
+  <!-- 左右滑動切換頁面 -->
+  <div 
+    v-if="activePage === 'one'" 
+    class="container-fluid page1 mt-2" 
+    @touchstart="touchStart" 
+    @touchend="touchEnd"
+  >
     <div class="row">
       <div class="col-6 d-flex justify-content-center">
         <div class="row">
@@ -87,7 +122,12 @@ const clickThree = () => {
     </div>
   </div>
 
-  <div v-if="activeButton === 'three'" class="container-fluid page2 mt-2">
+  <div 
+    v-if="activePage === 'three'" 
+    class="container-fluid page2 mt-2" 
+    @touchstart="touchStart" 
+    @touchend="touchEnd"
+  >
     <div class="row">
       <div class="col-6 d-flex justify-content-center ">
         <div class="row">
@@ -171,16 +211,16 @@ body {
   background-color: #4b4b4b;
   color: white;
 }
-.page1,.page2{
+.page1, .page2 {
   overflow-y: hidden;
 }
 .container-fluid {
-  overflow: auto; /* Enable scrolling for content containers */
+  overflow: auto;
 }
-.font{
+.font {
   font-size: 18px;
 }
-.mt-4{
+.mt-4 {
   margin-top: 50px !important;
 }
 </style>
