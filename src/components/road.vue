@@ -27,7 +27,7 @@ const clickThree = () => {
   </div>
   <div v-if="activePage === 'one'" class="container-fluid page1 mt-2">
     <div class="row" >
-      <div class="col-12 d-flex justify-content-center font mt-5">中壢服務區</div>
+      <div class="col-12 d-flex justify-content-center font mt-4">中壢服務區</div>
       <div class="col-12 d-flex justify-content-center font mt">湖口服務區</div>
       <div class="col-12 d-flex justify-content-center font mt">泰安服務區</div>
       <div class="col-12 d-flex justify-content-center font mt">西螺服務區</div>
@@ -38,7 +38,7 @@ const clickThree = () => {
 
   <div v-if="activePage === 'three'" class="container-fluid page2 mt-2">
     <div class="row">
-      <div class="col-12 d-flex justify-content-center font mt-5">關西服務區</div>
+      <div class="col-12 d-flex justify-content-center font mt-4">關西服務區</div>
       <div class="col-12 d-flex justify-content-center font mt">西湖服務區</div>
       <div class="col-12 d-flex justify-content-center font mt">清水服務區</div>
       <div class="col-12 d-flex justify-content-center font mt">南投服務區</div>
