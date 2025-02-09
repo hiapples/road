@@ -198,9 +198,11 @@ const touchEnd = (e) => {
 <style scoped>
 html, body {
   height: 100%;
-  overflow: hidden; /* 禁止上下滾動 */
   margin: 0;
-  touch-action: pan-x;  /* 只允許水平方向的觸摸滾動 */
+  overflow: hidden; /* 禁止滾動 */
+  -webkit-overflow-scrolling: touch; /* 適用於觸控滾動 */
+  touch-action: none; /* 禁止觸控操作 */
+  -webkit-touch-callout: none; /* 禁止長按操作 */
 }
 body {
   position: fixed; /* 固定內容 */
