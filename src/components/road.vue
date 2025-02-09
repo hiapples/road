@@ -75,7 +75,7 @@ html, body {
   overflow-y: hidden;
 }
 .font {
-  font-size:48px;
+  font-size:46px;
 }
 .font2{
   font-size:24px;
