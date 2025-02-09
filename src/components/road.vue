@@ -178,6 +178,6 @@ body {
   overflow: auto; /* Enable scrolling for content containers */
 }
 .font{
-  font-size: 14px;
+  font-size: 16px;
 }
 </style>
