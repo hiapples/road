@@ -207,7 +207,7 @@ html, body {
 body {
   position: fixed; /* 固定內容 */
   width: 100%;
-  overflow-x: hidden; /* 禁止水平滾動 */
+  overflow: hidden; /* 禁止水平滾動 */
 }
 .button-back {
   background-color: #b0afaf;
