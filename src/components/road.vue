@@ -45,19 +45,19 @@ const clickThree = () => {
           <div class="col-12 d-flex justify-content-center font">
             中壢服務區
           </div>
-          <div class="col-12 d-flex justify-content-center font mt-5">
+          <div class="col-12 d-flex justify-content-center font mt-4">
             湖口服務區
           </div>
-          <div class="col-12 d-flex justify-content-center font mt-5">
+          <div class="col-12 d-flex justify-content-center font mt-4">
             泰安服務區
           </div>
-          <div class="col-12 d-flex justify-content-center font mt-5">
+          <div class="col-12 d-flex justify-content-center font mt-4">
             西螺服務區
           </div>
-          <div class="col-12 d-flex justify-content-center font mt-5">
+          <div class="col-12 d-flex justify-content-center font mt-4">
             新營服務區
           </div>
-          <div class="col-12 d-flex justify-content-center font mt-5">
+          <div class="col-12 d-flex justify-content-center font mt-4">
             仁德服務區
           </div>
         </div>
@@ -67,19 +67,19 @@ const clickThree = () => {
           <div class="col-12 d-flex justify-content-center font">
             中壢服務區
           </div>
-          <div class="col-12 d-flex justify-content-center font mt-5">
+          <div class="col-12 d-flex justify-content-center font mt-4">
             湖口服務區
           </div>
-          <div class="col-12 d-flex justify-content-center font mt-5">
+          <div class="col-12 d-flex justify-content-center font mt-4">
             泰安服務區
           </div>
-          <div class="col-12 d-flex justify-content-center font mt-5">
+          <div class="col-12 d-flex justify-content-center font mt-4">
             西螺服務區
           </div>
-          <div class="col-12 d-flex justify-content-center font mt-5">
+          <div class="col-12 d-flex justify-content-center font mt-4">
             新營服務區
           </div>
-          <div class="col-12 d-flex justify-content-center font mt-5">
+          <div class="col-12 d-flex justify-content-center font mt-4">
             仁德服務區
           </div>
         </div>
@@ -94,28 +94,28 @@ const clickThree = () => {
           <div class="col-12 d-flex justify-content-center font">
             木柵休息站
           </div>
-          <div class="col-12 d-flex justify-content-center font mt-5">
+          <div class="col-12 d-flex justify-content-center font mt-4">
             關西服務區
           </div>
-          <div class="col-12 d-flex justify-content-center font mt-5">
+          <div class="col-12 d-flex justify-content-center font mt-4">
             西湖服務區
           </div>
-          <div class="col-12 d-flex justify-content-center font mt-5">
+          <div class="col-12 d-flex justify-content-center font mt-4">
             清水服務區
           </div>
-          <div class="col-12 d-flex justify-content-center font mt-5">
+          <div class="col-12 d-flex justify-content-center font mt-4">
             南投服務區
           </div>
-          <div class="col-12 d-flex justify-content-center font mt-5">
+          <div class="col-12 d-flex justify-content-center font mt-4">
             古坑服務區
           </div>
-          <div class="col-12 d-flex justify-content-center font mt-5">
+          <div class="col-12 d-flex justify-content-center font mt-4">
             東山服務區
           </div>
-          <div class="col-12 d-flex justify-content-center  font mt-5">
+          <div class="col-12 d-flex justify-content-center  font mt-4">
             新化休息站
           </div>
-          <div class="col-12 d-flex justify-content-center font mt-5">
+          <div class="col-12 d-flex justify-content-center font mt-4">
             關廟服務區
           </div>
         </div>
@@ -125,28 +125,28 @@ const clickThree = () => {
           <div class="col-12 d-flex justify-content-center font">
             關西服務區
           </div>
-          <div class="col-12 d-flex justify-content-center font mt-5">
+          <div class="col-12 d-flex justify-content-center font mt-4">
             寶山休息站
           </div>
-          <div class="col-12 d-flex justify-content-center font mt-5">
+          <div class="col-12 d-flex justify-content-center font mt-4">
             西湖服務區
           </div>
-          <div class="col-12 d-flex justify-content-center font mt-5">
+          <div class="col-12 d-flex justify-content-center font mt-4">
             清水服務區
           </div>
-          <div class="col-12 d-flex justify-content-center font mt-5">
+          <div class="col-12 d-flex justify-content-center font mt-4">
             南投服務區
           </div>
-          <div class="col-12 d-flex justify-content-center font mt-5">
+          <div class="col-12 d-flex justify-content-center font mt-4">
             古坑服務區
           </div>
-          <div class="col-12 d-flex justify-content-center font mt-5">
+          <div class="col-12 d-flex justify-content-center font mt-4">
             東山服務區
           </div>
-          <div class="col-12 d-flex justify-content-center font mt-5">
+          <div class="col-12 d-flex justify-content-center font mt-4">
             新化休息站
           </div>
-          <div class="col-12 d-flex justify-content-center  font mt-5">
+          <div class="col-12 d-flex justify-content-center  font mt-4">
             關廟服務區
           </div>
         </div>
@@ -178,6 +178,9 @@ body {
   overflow: auto; /* Enable scrolling for content containers */
 }
 .font{
-  font-size: 16px;
+  font-size: 18px;
+}
+.mt-4{
+  margin-top: 50px !important;
 }
 </style>
