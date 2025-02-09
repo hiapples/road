@@ -1,7 +1,7 @@
 {
-    "name": "road",
-    "short_name": "road",
-    "description": "road",
+    "name": "國道休息站",
+    "short_name": "國道休息站",
+    "description": "國道休息站",
     "start_url": "/index.html",
     "display": "standalone",
     "background_color": "#ffffff",
