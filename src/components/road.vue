@@ -21,8 +21,8 @@ const clickThree = () => {
 <template>
   <div class="container-fluid button-back">
     <div class="row">
-      <div class="button col-6 d-flex justify-content-center" :class="{ active: activeButton === 'one' }"@click="clickOne">國道一號</div>
-      <div class="button col-6 d-flex justify-content-center" :class="{ active: activeButton === 'three' }"@click="clickThree">國道三號</div>
+      <div class="button col-6 d-flex justify-content-center font2" :class="{ active: activeButton === 'one' }"@click="clickOne">國道一號</div>
+      <div class="button col-6 d-flex justify-content-center font2" :class="{ active: activeButton === 'three' }"@click="clickThree">國道三號</div>
     </div>
   </div>
   <div v-if="activePage === 'one'" class="container-fluid page1 mt-2">
@@ -64,7 +64,7 @@ html, body {
 }
 .button {
   background-color: #b0afaf;
-  padding: 20px 10px 20px 10px;
+  padding: 40px 10px 40px 10px;
   cursor: pointer;
 }
 .active {
@@ -76,6 +76,9 @@ html, body {
 }
 .font {
   font-size:32px;
+}
+.font2{
+  font-size:24px;
 }
 .mt { 
   margin-top: 40px !important;
