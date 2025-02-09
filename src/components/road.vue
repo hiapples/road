@@ -200,9 +200,7 @@ html, body {
   height: 100%;
   overflow: hidden; /* 禁止上下滾動 */
   margin: 0;
-  -webkit-overflow-scrolling: touch;
-  touch-action: none;
-  -webkit-touch-callout: none;
+  touch-action: pan-x;  /* 只允許水平方向的觸摸滾動 */
 }
 body {
   position: fixed; /* 固定內容 */
