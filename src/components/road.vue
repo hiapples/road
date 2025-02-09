@@ -75,7 +75,7 @@ html, body {
   overflow-y: hidden;
 }
 .font {
-  font-size:24px;
+  font-size:32px;
 }
 .mt { 
   margin-top: 40px !important;
