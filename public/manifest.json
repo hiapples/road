@@ -3,7 +3,8 @@
     "short_name": "國道休息站",
     "description": "國道休息站",
     "start_url": "/index.html",
-    "display": "standalone",
+    "display": "fullscreen", 
+    "orientation": "portrait", 
     "background_color": "#ffffff",
     "theme_color": "#ffffff",
     "icons": [
@@ -18,7 +19,6 @@
         "type": "image/png"
       }
     ],
-    "orientation": "portrait",
     "scope": "/",
     "lang": "en"
   }
