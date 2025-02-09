@@ -62,7 +62,7 @@ const clickThree = () => {
           </div>
         </div>
       </div>
-      <div class="col-6 d-flex justify-content-center"@click="clickThree" style="background-color: #0072E3;">
+      <div class="col-6 d-flex justify-content-center"@click="clickThree" >
         <div class="row">
           <div class="col-12 d-flex justify-content-center font">
             中壢服務區
@@ -123,7 +123,7 @@ const clickThree = () => {
           </div>
         </div>
       </div>
-      <div class="col-6 d-flex justify-content-center"@click="clickThree" style="background-color: #0072E3;">
+      <div class="col-6 d-flex justify-content-center"@click="clickThree" >
         <div class="row">
           <div class="col-12 d-flex justify-content-center font" >
             關西服務區
