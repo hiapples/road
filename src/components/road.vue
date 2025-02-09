@@ -196,8 +196,15 @@ const touchEnd = (e) => {
 </template>
 
 <style scoped>
+html, body {
+  height: 100%;
+  overflow: hidden; /* 禁止上下滾動 */
+  margin: 0;
+}
 body {
-  overflow: hidden;
+  position: fixed; /* 固定內容 */
+  width: 100%;
+  overflow-x: hidden; /* 禁止水平滾動 */
 }
 .button-back {
   background-color: #b0afaf;
