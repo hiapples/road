@@ -14,68 +14,30 @@ const clickThree = () => {
   activePage.value = 'three'; // 顯示 page2
 };
 
-// 用來檢測左右滑動
-let touchstartX = 0;
-let touchendX = 0;
 
-const checkSwipe = () => {
-  if (touchendX < touchstartX) {
-    // 向左滑，切換到 page2
-    activePage.value = 'three';
-    activeButton.value ='three';
-  }
-  if (touchendX > touchstartX) {
-    // 向右滑，切換到 page1
-    activePage.value = 'one';
-    activeButton.value ='one';
-  }
-};
 
-const touchStart = (e) => {
-  touchstartX = e.changedTouches[0].screenX;
-};
-
-const touchEnd = (e) => {
-  touchendX = e.changedTouches[0].screenX;
-  checkSwipe();
-};
 </script>
 
 <template>
   <div class="container-fluid button-back">
     <div class="row">
-      <div 
-        class="button col-6 d-flex justify-content-center" 
-        :class="{ active: activeButton === 'one' }"
-        @click="clickOne"
-      >
+      <div class="button col-6 d-flex justify-content-center" :class="{ active: activeButton === 'one' }"@click="clickOne">
         國道一號
       </div>
-      <div 
-        class="button col-6 d-flex justify-content-center" 
-        :class="{ active: activeButton === 'three' }"
-        @click="clickThree"
-      >
+      <div class="button col-6 d-flex justify-content-center" :class="{ active: activeButton === 'three' }"@click="clickThree">
         國道三號
       </div>
-      <div class="col-6 d-flex justify-content-center" style="color: brown;background-color: white;">
+      <div class="col-6 d-flex justify-content-center" style="color: brown;background-color: white;"@click="clickOne">
         <span class="mt-3 mb-3">北上</span>
       </div>
-      <div class="col-6 d-flex justify-content-center" style="color: #0072E3;background-color: white;">
+      <div class="col-6 d-flex justify-content-center" style="color: #0072E3;background-color: white;"@click="clickThree">
         <span class="mt-3 mb-3">南下</span>
       </div>
     </div>
   </div>
-
-  <!-- 左右滑動切換頁面 -->
-  <div 
-    v-if="activePage === 'one'" 
-    class="container-fluid page1 mt-2" 
-    @touchstart="touchStart" 
-    @touchend="touchEnd"
-  >
-    <div class="row">
-      <div class="col-6 d-flex justify-content-center">
+  <div v-if="activePage === 'one'" class="container-fluid page1 mt-2">
+    <div class="row" >
+      <div class="col-6 d-flex justify-content-center" @click="clickOne">
         <div class="row">
           <div class="col-12 d-flex justify-content-center font">
             中壢服務區
@@ -94,10 +56,13 @@ const touchEnd = (e) => {
           </div>
           <div class="col-12 d-flex justify-content-center font mt-4">
             仁德服務區
+          </div>
+          <div class="col-12 d-flex justify-content-center font mt-4">
+            <br/><br/><br/><br/><br/><br/>
           </div>
         </div>
       </div>
-      <div class="col-6 d-flex justify-content-center">
+      <div class="col-6 d-flex justify-content-center"@click="clickThree" style="background-color: #0072E3;">
         <div class="row">
           <div class="col-12 d-flex justify-content-center font">
             中壢服務區
@@ -116,20 +81,18 @@ const touchEnd = (e) => {
           </div>
           <div class="col-12 d-flex justify-content-center font mt-4">
             仁德服務區
+          </div>
+          <div class="col-12 d-flex justify-content-center font mt-4">
+            <br/><br/><br/><br/><br/><br/>
           </div>
         </div>
       </div>
     </div>
   </div>
 
-  <div 
-    v-if="activePage === 'three'" 
-    class="container-fluid page2 mt-2" 
-    @touchstart="touchStart" 
-    @touchend="touchEnd"
-  >
+  <div v-if="activePage === 'three'" class="container-fluid page2 mt-2">
     <div class="row">
-      <div class="col-6 d-flex justify-content-center ">
+      <div class="col-6 d-flex justify-content-center "@click="clickOne">
         <div class="row">
           <div class="col-12 d-flex justify-content-center font">
             木柵休息站
@@ -160,9 +123,9 @@ const touchEnd = (e) => {
           </div>
         </div>
       </div>
-      <div class="col-6 d-flex justify-content-center">
+      <div class="col-6 d-flex justify-content-center"@click="clickThree" style="background-color: #0072E3;">
         <div class="row">
-          <div class="col-12 d-flex justify-content-center font">
+          <div class="col-12 d-flex justify-content-center font" >
             關西服務區
           </div>
           <div class="col-12 d-flex justify-content-center font mt-4">
@@ -204,11 +167,7 @@ html, body {
   touch-action: none; /* 禁止觸控操作 */
   -webkit-touch-callout: none; /* 禁止長按操作 */
 }
-body {
-  position: fixed; /* 固定內容 */
-  width: 100%;
-  overflow: hidden; /* 禁止水平滾動 */
-}
+
 .button-back {
   background-color: #b0afaf;
 }
@@ -224,13 +183,10 @@ body {
 .page1, .page2 {
   overflow-y: hidden;
 }
-.container-fluid {
-  overflow: auto;
-}
 .font {
   font-size: 18px;
 }
-.mt-4 {
+.mt-4 { 
   margin-top: 50px !important;
 }
 </style>
