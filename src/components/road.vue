@@ -75,12 +75,12 @@ html, body {
   overflow-y: hidden;
 }
 .font {
-  font-size:40px;
+  font-size:50px;
 }
 .font2{
   font-size:24px;
 }
 .mt { 
-  margin-top: 40px !important;
+  margin-top: 35px !important;
 }
 </style>
