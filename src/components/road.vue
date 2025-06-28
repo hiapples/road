@@ -13,7 +13,7 @@ let lastPosition = null
 function calculateDirection(prev, current) {
   const latDiff = current.latitude - prev.latitude;
 
-  if (Math.abs(latDiff) < 0.0001) {
+  if (Math.abs(latDiff) < 0.00001) {
     return '靜止';
   }
 
