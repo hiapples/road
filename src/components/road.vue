@@ -1,9 +1,59 @@
 <script setup>
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, onUnmounted } from 'vue';
 
 const activeButton = ref('one');
 const activePage = ref('one'); // 控制目前顯示的頁面
 
+const position = ref(null)
+const direction = ref('未知')
+let watchId = null
+let lastPosition = null
+
+//判斷南北
+function calculateDirection(prev, current) {
+  const latDiff = current.latitude - prev.latitude;
+
+  if (Math.abs(latDiff) < 0.0001) {
+    return '靜止';
+  }
+
+  return latDiff > 0 ? '向北' : '向南';
+}
+
+
+onMounted(() => {
+  if ('geolocation' in navigator) {
+    watchId = navigator.geolocation.watchPosition(
+      (pos) => {
+        const coords = pos.coords
+        if (lastPosition) {
+          direction.value = calculateDirection(lastPosition, coords)
+        }
+        lastPosition = coords
+        position.value = {
+          latitude: coords.latitude,
+          longitude: coords.longitude,
+        }
+      },
+      (err) => {
+        console.error('取得位置錯誤：', err)
+      },
+      {
+        enableHighAccuracy: true,
+        maximumAge: 0,
+        timeout: 10000,
+      }
+    )
+  } else {
+    console.warn('瀏覽器不支援定位功能')
+  }
+})
+
+onUnmounted(() => {
+  if (watchId !== null) {
+    navigator.geolocation.clearWatch(watchId)
+  }
+})
 
 // 切換按鈕
 const clickOne = () => {
@@ -26,13 +76,25 @@ const clickThree = () => {
   </div>
   <div v-if="activePage === 'one'" class="container-fluid page1 mt-2">
     <div class="row" >
-      <div class="col-12 d-flex justify-content-center font mt-2">
-        <a href="https://www.google.com.tw/maps/place/%E4%B8%AD%E5%A3%A2%E6%9C%8D%E5%8B%99%E5%8D%80/@25.0042939,121.2492763,17z/data=!3m1!4b1!4m6!3m5!1s0x346821be57742231:0x7bf3ab53672804a2!8m2!3d25.0042891!4d121.2518512!16s%2Fg%2F155r9l4q?hl=zh-TW&entry=ttu&g_ep=EgoyMDI1MDMwMi4wIKXMDSoASAFQAw%3D%3D">
+      <div v-if="position" class="d-flex justify-content-center mt-2">
+        <p>移動方向：{{ direction }}</p>
+      </div>
+      <div v-else class="d-flex justify-content-center">
+        <p>正在取得位置資料...</p>
+      </div>
+      <div class="col-12 d-flex justify-content-center font ">
+        <a v-if="direction === '向北'" href="https://www.google.com.tw/maps/place/%E4%B8%AD%E5%A3%A2%E6%9C%8D%E5%8B%99%E5%8D%80/@25.0042939,121.2492763,17z/data=!3m1!4b1!4m6!3m5!1s0x346821be57742231:0x7bf3ab53672804a2!8m2!3d25.0042891!4d121.2518512!16s%2Fg%2F155r9l4q?hl=zh-TW&entry=ttu&g_ep=EgoyMDI1MDMwMi4wIKXMDSoASAFQAw%3D%3D">
+          <span>中壢服務區</span>
+        </a>
+        <a v-else href="https://www.google.com.tw/maps/place/%E4%B8%AD%E5%A3%A2%E6%9C%8D%E5%8B%99%E5%8D%80/@25.0042939,121.2492763,17z/data=!3m1!4b1!4m6!3m5!1s0x346821be57742231:0x7bf3ab53672804a2!8m2!3d25.0042891!4d121.2518512!16s%2Fg%2F155r9l4q?hl=zh-TW&entry=ttu&g_ep=EgoyMDI1MDMwMi4wIKXMDSoASAFQAw%3D%3D">
           <span>中壢服務區</span>
         </a>
       </div>
       <div class="col-12 d-flex justify-content-center font mt">
-        <a href="https://www.google.com.tw/maps/place/%E6%B9%96%E5%8F%A3%E6%9C%8D%E5%8B%99%E5%8D%80+%E5%8C%97%E5%90%91/@24.8609836,121.007205,17z/data=!3m1!4b1!4m6!3m5!1s0x34683135bfa440a5:0x893d9409b7597382!8m2!3d24.8609788!4d121.0120759!16s%2Fg%2F155q2hxs?hl=zh-TW&entry=ttu&g_ep=EgoyMDI1MDMwMi4wIKXMDSoASAFQAw%3D%3D">
+        <a v-if="direction === '向北'" href="https://www.google.com.tw/maps/place/%E6%B9%96%E5%8F%A3%E6%9C%8D%E5%8B%99%E5%8D%80+%E5%8C%97%E5%90%91/@24.8600591,121.0106834,16z/data=!4m6!3m5!1s0x34683135bfa440a5:0x893d9409b7597382!8m2!3d24.8609788!4d121.0120759!16s%2Fg%2F155q2hxs?hl=zh-TW&entry=ttu&g_ep=EgoyMDI1MDYyMi4wIKXMDSoASAFQAw%3D%3D">
+          <span>湖口服務區</span>
+        </a>
+        <a v-else href="https://www.google.com.tw/maps/place/%E6%B9%96%E5%8F%A3%E6%9C%8D%E5%8B%99%E5%8D%80%E5%8D%97%E5%90%91/@24.8600591,121.0106834,16z/data=!4m6!3m5!1s0x346836b533aabb5d:0x6c53a999c2412eae!8m2!3d24.8573562!4d121.009626!16s%2Fg%2F1q62grczw?hl=zh-TW&entry=ttu&g_ep=EgoyMDI1MDYyMi4wIKXMDSoASAFQAw%3D%3D">
           <span>湖口服務區</span>
         </a>
       </div>
@@ -61,7 +123,13 @@ const clickThree = () => {
 
   <div v-if="activePage === 'three'" class="container-fluid page2 mt-2">
     <div class="row">
-      <div class="col-12 d-flex justify-content-center font mt-2">
+      <div v-if="position" class="d-flex justify-content-center mt-2">
+        <p>移動方向：{{ direction }}</p>
+      </div>
+      <div v-else class="d-flex justify-content-center">
+        <p>正在取得位置資料...</p>
+      </div>
+      <div class="col-12 d-flex justify-content-center font ">
         <a href="https://www.google.com.tw/maps/place/%E9%97%9C%E8%A5%BF%E6%9C%8D%E5%8B%99%E5%8D%80/@24.8011082,121.1898685,17z/data=!3m2!4b1!5s0x34683ebdbe57f375:0xd0735f997f005528!4m6!3m5!1s0x3468394000000001:0xe6a8cc38096ec213!8m2!3d24.8011034!4d121.1924434!16s%2Fg%2F155rzm1n?hl=zh-TW&entry=ttu&g_ep=EgoyMDI1MDIwOS4wIKXMDSoASAFQAw%3D%3D">
           <span>關西服務區</span>
         </a>
@@ -129,7 +197,7 @@ a{
   overflow-y: hidden;
 }
 .font {
-  font-size:42px;
+  font-size:38px;
 }
 .font2{
   font-size:24px;
