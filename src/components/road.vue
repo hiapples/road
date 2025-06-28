@@ -99,22 +99,34 @@ const clickThree = () => {
         </a>
       </div>
       <div class="col-12 d-flex justify-content-center font mt">
-        <a href="https://www.google.com.tw/maps/place/%E6%B3%B0%E5%AE%89%E6%9C%8D%E5%8B%99%E5%8D%80/@24.3289082,120.7142303,17z/data=!3m2!4b1!5s0x3469055489f93871:0x992dbc382c0a959b!4m6!3m5!1s0x3469055511c9ab13:0x5f23c38cc1583053!8m2!3d24.3289033!4d120.7168052!16s%2Fg%2F11c6t92jt7?hl=zh-TW&entry=ttu&g_ep=EgoyMDI1MDMwMi4wIKXMDSoASAFQAw%3D%3D">
+        <a v-if="direction === '向北'" href="https://www.google.com.tw/maps/place/%E6%B3%B0%E5%AE%89%E6%9C%8D%E5%8B%99%E5%8D%80/@24.3289082,120.7142303,17z/data=!3m2!4b1!5s0x3469055489f93871:0x992dbc382c0a959b!4m6!3m5!1s0x3469055511c9ab13:0x5f23c38cc1583053!8m2!3d24.3289033!4d120.7168052!16s%2Fg%2F11c6t92jt7?hl=zh-TW&entry=ttu&g_ep=EgoyMDI1MDMwMi4wIKXMDSoASAFQAw%3D%3D">
+          <span>泰安服務區</span>
+        </a>
+        <a v-else href="https://www.google.com.tw/maps/place/%E6%B3%B0%E5%AE%89%E6%9C%8D%E5%8B%99%E5%8D%80%E5%8D%97%E7%AB%99/@24.330368,120.7090285,17z/data=!3m1!4b1!4m6!3m5!1s0x34690f1cc2a9f39f:0x378053027144437e!8m2!3d24.3303631!4d120.7116034!16s%2Fg%2F11s78p3yk5?hl=zh-TW&entry=ttu&g_ep=EgoyMDI1MDYyMy4yIKXMDSoASAFQAw%3D%3D">
           <span>泰安服務區</span>
         </a>
       </div>
       <div class="col-12 d-flex justify-content-center font mt">
-        <a href="https://www.google.com.tw/maps/place/%E8%A5%BF%E8%9E%BA%E6%9C%8D%E5%8B%99%E5%8D%80+%E5%8C%97%E4%B8%8A/@23.7886624,120.4758195,17z/data=!4m6!3m5!1s0x346eb42d95f3e181:0x7a58d76d96564f1!8m2!3d23.7885532!4d120.4794235!16s%2Fg%2F11bbrjgh3z?hl=zh-TW&entry=ttu&g_ep=EgoyMDI1MDMwMi4wIKXMDSoASAFQAw%3D%3D">
+        <a v-if="direction === '向北'" href="https://www.google.com.tw/maps/place/%E8%A5%BF%E8%9E%BA%E6%9C%8D%E5%8B%99%E5%8D%80+%E5%8C%97%E4%B8%8A/@23.7886624,120.4758195,17z/data=!4m6!3m5!1s0x346eb42d95f3e181:0x7a58d76d96564f1!8m2!3d23.7885532!4d120.4794235!16s%2Fg%2F11bbrjgh3z?hl=zh-TW&entry=ttu&g_ep=EgoyMDI1MDMwMi4wIKXMDSoASAFQAw%3D%3D">
+          <span>西螺服務區</span>
+        </a>
+        <a v-else href="https://www.google.com.tw/maps/place/%E8%A5%BF%E8%9E%BA%E6%9C%8D%E5%8B%99%E5%8D%80+%E5%8D%97%E4%B8%8B/@23.7887668,120.4747904,17z/data=!3m1!4b1!4m6!3m5!1s0x346eb68493af8d07:0xf06d54f42a929739!8m2!3d23.7887619!4d120.4773653!16s%2Fg%2F155rhjh2?hl=zh-TW&entry=ttu&g_ep=EgoyMDI1MDYyMy4yIKXMDSoASAFQAw%3D%3D">
           <span>西螺服務區</span>
         </a>
       </div>
       <div class="col-12 d-flex justify-content-center font mt">
-        <a href="https://www.google.com.tw/maps/place/%E6%96%B0%E7%87%9F%E6%9C%8D%E5%8B%99%E5%8D%80+%E5%8C%97%E5%90%91/@23.3395705,120.3078719,17z/data=!3m1!4b1!4m6!3m5!1s0x346e85a588808e71:0xbb93357e00232e56!8m2!3d23.3395656!4d120.3127428!16s%2Fg%2F155q6lvx?hl=zh-TW&entry=ttu&g_ep=EgoyMDI1MDMwMi4wIKXMDSoASAFQAw%3D%3D">
+        <a v-if="direction === '向北'" href="https://www.google.com.tw/maps/place/%E6%96%B0%E7%87%9F%E6%9C%8D%E5%8B%99%E5%8D%80+%E5%8C%97%E5%90%91/@23.3395705,120.3078719,17z/data=!3m1!4b1!4m6!3m5!1s0x346e85a588808e71:0xbb93357e00232e56!8m2!3d23.3395656!4d120.3127428!16s%2Fg%2F155q6lvx?hl=zh-TW&entry=ttu&g_ep=EgoyMDI1MDMwMi4wIKXMDSoASAFQAw%3D%3D">
+          <span>新營服務區</span>
+        </a>
+        <a v-else href="https://www.google.com.tw/maps/place/%E6%96%B0%E7%87%9F%E6%9C%8D%E5%8B%99%E5%8D%80+%E5%8D%97%E5%90%91/@23.3407391,120.3094393,17z/data=!3m1!4b1!4m6!3m5!1s0x346e85a68c319229:0x10fad5d73489983d!8m2!3d23.3407342!4d120.3120142!16s%2Fg%2F11c0vyr6d1?hl=zh-TW&entry=ttu&g_ep=EgoyMDI1MDYyMy4yIKXMDSoASAFQAw%3D%3D">
           <span>新營服務區</span>
         </a>
       </div>
       <div class="col-12 d-flex justify-content-center font mt">
-        <a href="https://www.google.com.tw/maps/place/%E4%BB%81%E5%BE%B7%E6%9C%8D%E5%8B%99%E5%8D%80+%E5%8D%97%E4%B8%8B/@22.9059611,120.2602006,17z/data=!3m1!4b1!4m6!3m5!1s0x346e7368e4d37d4f:0xc6920674817516ae!8m2!3d22.9059562!4d120.2650715!16s%2Fg%2F155q85yv?hl=zh-TW&entry=ttu&g_ep=EgoyMDI1MDMwMi4wIKXMDSoASAFQAw%3D%3D">
+        <a v-if="direction === '向北'" href="https://www.google.com.tw/maps/place/%E4%BB%81%E5%BE%B7%E6%9C%8D%E5%8B%99%E5%8D%80+%E5%8C%97%E4%B8%8A/@22.9064806,120.2636274,17z/data=!3m1!4b1!4m6!3m5!1s0x346e73d7938f0ee3:0xa4128a83f3bae77d!8m2!3d22.9064757!4d120.2662023!16s%2Fg%2F11rsqq1hvz?hl=zh-TW&entry=ttu&g_ep=EgoyMDI1MDYyMy4yIKXMDSoASAFQAw%3D%3D">
+          <span>仁德服務區</span>
+        </a>
+        <a v-else href="https://www.google.com.tw/maps/place/%E4%BB%81%E5%BE%B7%E6%9C%8D%E5%8B%99%E5%8D%80+%E5%8D%97%E4%B8%8B/@22.9059611,120.2602006,17z/data=!3m1!4b1!4m6!3m5!1s0x346e7368e4d37d4f:0xc6920674817516ae!8m2!3d22.9059562!4d120.2650715!16s%2Fg%2F155q85yv?hl=zh-TW&entry=ttu&g_ep=EgoyMDI1MDMwMi4wIKXMDSoASAFQAw%3D%3D">
           <span>仁德服務區</span>
         </a>
       </div>
