@@ -83,10 +83,7 @@ const clickThree = () => {
         <p>正在取得位置資料...</p>
       </div>
       <div class="col-12 d-flex justify-content-center font ">
-        <a v-if="direction === '向北'" href="https://www.google.com.tw/maps/place/%E4%B8%AD%E5%A3%A2%E6%9C%8D%E5%8B%99%E5%8D%80/@25.0042939,121.2492763,17z/data=!3m1!4b1!4m6!3m5!1s0x346821be57742231:0x7bf3ab53672804a2!8m2!3d25.0042891!4d121.2518512!16s%2Fg%2F155r9l4q?hl=zh-TW&entry=ttu&g_ep=EgoyMDI1MDMwMi4wIKXMDSoASAFQAw%3D%3D">
-          <span>中壢服務區</span>
-        </a>
-        <a v-else href="https://www.google.com.tw/maps/place/%E4%B8%AD%E5%A3%A2%E6%9C%8D%E5%8B%99%E5%8D%80/@25.0042939,121.2492763,17z/data=!3m1!4b1!4m6!3m5!1s0x346821be57742231:0x7bf3ab53672804a2!8m2!3d25.0042891!4d121.2518512!16s%2Fg%2F155r9l4q?hl=zh-TW&entry=ttu&g_ep=EgoyMDI1MDMwMi4wIKXMDSoASAFQAw%3D%3D">
+        <a href="https://www.google.com.tw/maps/place/%E4%B8%AD%E5%A3%A2%E6%9C%8D%E5%8B%99%E5%8D%80/@25.0042939,121.2492763,17z/data=!3m1!4b1!4m6!3m5!1s0x346821be57742231:0x7bf3ab53672804a2!8m2!3d25.0042891!4d121.2518512!16s%2Fg%2F155r9l4q?hl=zh-TW&entry=ttu&g_ep=EgoyMDI1MDMwMi4wIKXMDSoASAFQAw%3D%3D">
           <span>中壢服務區</span>
         </a>
       </div>
@@ -147,7 +144,10 @@ const clickThree = () => {
         </a>
       </div>
       <div class="col-12 d-flex justify-content-center font mt">
-        <a href="https://www.google.com.tw/maps/place/%E8%A5%BF%E6%B9%96%E6%9C%8D%E5%8B%99%E5%8D%80/@24.5650371,120.7582243,17z/data=!3m1!4b1!4m6!3m5!1s0x3469a92908285b93:0x390f4ae6014a0bd0!8m2!3d24.5650322!4d120.7607992!16s%2Fg%2F155skv09?hl=zh-TW&entry=ttu&g_ep=EgoyMDI1MDMwMi4wIKXMDSoASAFQAw%3D%3D">
+        <a v-if="direction === '向北'" href="https://www.google.com.tw/maps/place/%E8%A5%BF%E6%B9%96%E6%9C%8D%E5%8B%99%E5%8D%80/@24.5650371,120.7582243,17z/data=!3m1!4b1!4m6!3m5!1s0x3469a92908285b93:0x390f4ae6014a0bd0!8m2!3d24.5650322!4d120.7607992!16s%2Fg%2F155skv09?hl=zh-TW&entry=ttu&g_ep=EgoyMDI1MDMwMi4wIKXMDSoASAFQAw%3D%3D">
+          <span>西湖服務區</span>
+        </a>
+        <a v-else href="https://www.google.com.tw/maps/place/%E8%A5%BF%E6%B9%96%E6%9C%8D%E5%8B%99%E5%8D%80+(%E5%8D%97%E4%B8%8B)/@24.5656332,120.7567334,17z/data=!3m1!4b1!4m6!3m5!1s0x3469aecd42c57911:0x254fde06b6b7658d!8m2!3d24.5656283!4d120.7593083!16s%2Fg%2F1pzr1wrd8?hl=zh-TW&entry=ttu&g_ep=EgoyMDI1MDYyMy4yIKXMDSoASAFQAw%3D%3D">
           <span>西湖服務區</span>
         </a>
       </div>
@@ -172,7 +172,10 @@ const clickThree = () => {
         </a>
       </div>
       <div class="col-12 d-flex justify-content-center font mt">
-        <a href="https://www.google.com.tw/maps/place/%E9%97%9C%E5%BB%9F%E6%9C%8D%E5%8B%99%E5%8D%80+(%E5%8D%97%E5%90%91)/@22.9315004,120.3484191,17z/data=!3m1!4b1!4m6!3m5!1s0x346e6d9359db80f3:0xc9950b5923eab1e1!8m2!3d22.9314955!4d120.350994!16s%2Fg%2F11s7r3s56d?hl=zh-TW&entry=ttu&g_ep=EgoyMDI1MDMwMi4wIKXMDSoASAFQAw%3D%3D">
+        <a v-if="direction === '向北'" href="https://www.google.com.tw/maps/place/%E9%97%9C%E5%BB%9F%E6%9C%8D%E5%8B%99%E5%8D%80%EF%BC%88%E5%8C%97%EF%BC%89/@22.9291469,120.3499771,17z/data=!4m14!1m7!3m6!1s0x346e6df2e35f0d95:0x50773c621b9e5301!2z6Zec5buf5pyN5YuZ5Y2A77yI5YyX77yJ!8m2!3d22.929142!4d120.352552!16s%2Fg%2F12m90msh_!3m5!1s0x346e6df2e35f0d95:0x50773c621b9e5301!8m2!3d22.929142!4d120.352552!16s%2Fg%2F12m90msh_?hl=zh-TW&entry=ttu&g_ep=EgoyMDI1MDYyMy4yIKXMDSoASAFQAw%3D%3D">
+          <span>關廟服務區</span>
+        </a>
+        <a v-else href="https://www.google.com.tw/maps/place/%E9%97%9C%E5%BB%9F%E6%9C%8D%E5%8B%99%E5%8D%80+(%E5%8D%97%E5%90%91)/@22.9315004,120.3484191,17z/data=!3m1!4b1!4m6!3m5!1s0x346e6d9359db80f3:0xc9950b5923eab1e1!8m2!3d22.9314955!4d120.350994!16s%2Fg%2F11s7r3s56d?hl=zh-TW&entry=ttu&g_ep=EgoyMDI1MDYyMy4yIKXMDSoASAFQAw%3D%3D">
           <span>關廟服務區</span>
         </a>
       </div>
